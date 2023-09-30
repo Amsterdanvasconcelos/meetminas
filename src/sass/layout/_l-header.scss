@@ -12,11 +12,13 @@
     background-color: var(--clr-background);
     width: 100%;
     max-width: var(--max-width-default);
+    z-index: 10;
 
     @include breakpoint(large) {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: rem(16px) rem(60px);
     }
 }
 

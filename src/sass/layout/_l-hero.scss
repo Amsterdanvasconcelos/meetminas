@@ -1,0 +1,73 @@
+@use '../util/' as *;
+
+.l-hero {
+    display: flex;
+    align-items: center;
+    
+    position: relative;
+    min-height: 100vh;
+    max-width: var(--max-width-default);
+    margin: 0 auto;
+}
+
+.l-hero__video {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.l-hero__text {
+    padding: rem(16px);
+
+    @include breakpoint(large) {
+        padding: rem(16px) rem(60px);
+    }
+}
+
+.l-hero__title {
+    color: var(--clr-white);
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.l-hero__title--row2 {
+    @include breakpoint(medium) {
+        display: block;
+    }
+    @include breakpoint(large) {
+        font-size: var(--font-step-3);
+    }
+}
+
+.l-hero__description {
+    margin: rem(16px) 0;
+    max-width: rem(570px);
+    color: var(--clr-white);
+    font-weight: 600;
+
+    @include breakpoint(large) {
+        max-width: rem(660px);
+        line-height: 1.8;
+    }
+}
+
+.l-hero__cta {
+    display: block;
+    padding: rem(12px);
+    background-color: var(--clr-medium-green);
+    width: min(70vw ,rem(270px));
+    color: var(--clr-white);
+    font-size: var(--font-step-2);
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: rem(2px);
+    transition: var(--transition);
+
+    &:hover {
+        letter-spacing: rem(6px);
+    }
+}
