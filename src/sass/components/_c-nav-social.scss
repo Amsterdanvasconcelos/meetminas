@@ -1,0 +1,16 @@
+@use '../util/' as *;
+
+.c-nav-social {
+    display: flex;
+    gap: rem(30px);
+}
+
+.c-nav-social__link {
+    color: var(--clr-black);
+    font-size: var(--font-step--0);
+    font-weight: 900;
+    transition: var(--transition);
+    &:hover {
+        color: var(--clr-medium-green);
+    }
+}

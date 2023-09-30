@@ -1,0 +1,50 @@
+@use '../util/' as *;
+
+.l-header {
+    display: flex;
+    justify-content: center;
+}
+
+.l-header__content {
+    position: fixed;
+    padding: rem(16px);
+    box-shadow: var(--dark-shadow);
+    background-color: var(--clr-background);
+    width: 100%;
+    max-width: var(--max-width-default);
+
+    @include breakpoint(large) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.l-header__content-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.l-header__btn-menu {
+    background: transparent;
+    cursor: pointer;
+    color: var(--clr-medium-green);
+    font-size: rem(32px);
+    transition: var(--transition);
+
+    &:hover {
+        transform: scale(1.2);
+    }
+    @include breakpoint(large) {
+        display: none;
+    }
+}
+
+.l-header__content .c-nav-social {
+    display: none;
+
+    @include breakpoint(large) {
+        display: flex;
+    }
+}
