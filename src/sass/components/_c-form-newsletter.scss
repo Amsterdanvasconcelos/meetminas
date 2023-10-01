@@ -1,0 +1,30 @@
+@use '../util/' as *;
+
+.c-form-newsletter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(16px);
+    width: 100%;
+}
+
+.c-form-newsletter__input {
+    flex: 3 1 300px;
+    padding: rem(12px);
+    height: 60px;
+    width: 100%;
+}
+
+.c-form-newsletter__btn {
+    flex: 1 1 200px;
+    background-color: var(--clr-medium-green);
+    height: 60px;
+    width: 100%;
+    font-size: rem(24px);
+    color: var(--clr-white);
+    text-transform: uppercase;
+    transition: var(--transition);
+
+    &:hover {
+        letter-spacing: rem(4px);
+    }
+}

@@ -1,0 +1,23 @@
+@use '../util/' as *;
+
+.l-newsletter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(10px);
+    margin: 0 auto;
+    max-width: var(--width-full);
+    line-height: 1.2;
+    @include padding;
+}
+
+.l-newsletter__info {
+    flex: 1 1 400px;
+}
+
+.l-newsletter .c-form-newsletter {
+    flex: 3 1 400px;
+}
+
+.l-newsletter__title {
+    margin-bottom: rem(10px);
+}
