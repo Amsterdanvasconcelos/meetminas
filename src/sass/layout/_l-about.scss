@@ -4,20 +4,29 @@
     background-color: var(--clr-background);
     max-width: var(--max-width-default);
     margin: 0 auto;
-    padding: rem(16px);
 
+    @include padding;
     @include breakpoint(large) {
+        height: 100vh;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        justify-items: center;
+        align-items: center;
     }
 }
 
 .l-about .c-title {
     grid-column: 1 / -1;
+    align-self: end;
 }
 
 .l-about__wrapper-img {
     grid-column: 1;
+    justify-self: end;
+    @include breakpoint(large) {
+        padding-right: rem(70px);
+    }
 }
 
 .l-about__img {
@@ -26,6 +35,9 @@
 
 .l-about__text {
     grid-column: 2;
+    @include breakpoint(large) {
+        max-width: rem(600px);
+    }
 }
 
 .l-about__text-title {

@@ -3,7 +3,13 @@
 body {
     color: var(--clr-text);
     font-family: var(--ff-primary);
-    font-size: var(--font-size-default);
+    font-size: rem(16px);
+    @include breakpoint(medium) {
+        font-size: rem(18px);
+    }
+    @include breakpoint(xlarge) {
+        font-size: rem(20px);
+    }
 }
 
 p,

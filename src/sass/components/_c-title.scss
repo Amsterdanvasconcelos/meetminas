@@ -8,4 +8,7 @@
     &--emphasis {
         color: var(--clr-medium-green);
     }
+    @include breakpoint(large) {
+        font-size: rem(40px);
+    }
 }

@@ -24,9 +24,14 @@
 
 .l-hero__title {
     color: var(--clr-white);
-    font-weight: 900;
     line-height: 1.1;
     text-transform: uppercase;
+    @include breakpoint(medium) {
+        font-size: rem(45px);
+    }
+    @include breakpoint(large) {
+        font-size: rem(60px);
+    }
 }
 
 .l-hero__title--row2 {
