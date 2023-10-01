@@ -1,0 +1,52 @@
+@use '../util/' as *;
+
+.c-card-pack {
+    background-color: var(--clr-white);
+    box-shadow: var(--dark-shadow);
+    cursor: pointer;
+    max-width: rem(290px);
+    transition: var(--transition);
+
+    @include breakpoint(medium) {
+        flex: 1 1 rem(300px);
+        max-width: rem(400px);
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+}
+
+.c-card-pack__info {
+    padding: rem(16px);
+}
+
+.c-card-pack__info > * {
+    margin-top: rem(10px);
+}
+
+.c-card-pack__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c-card-pack__days {
+    font-weight: 300;
+}
+
+.c-card-pack__body {
+    text-align: justify;
+    line-height: 1.4;
+}
+
+.c-card-pack__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 300;
+
+    & i {
+        font-size: rem(14px);
+    }
+}

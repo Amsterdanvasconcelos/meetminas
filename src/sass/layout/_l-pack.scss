@@ -1,0 +1,53 @@
+@use '../util/' as *;
+
+.l-pack {
+    background-color: var(--clr-background);
+    margin: 0 auto;
+    max-width: var(--width-full);
+    @include padding;
+}
+
+.l-pack__wrapper-cards {
+    position: relative;
+    display: flex;
+    gap: rem(20px);
+    overflow-x: auto;
+
+    @media screen and (max-width: 23.75rem) {
+        &::before {
+            content: '\f30b';
+            position: absolute;
+            left: 90%;
+            filter: drop-shadow(0 0 2px var(--clr-dark-green));
+            font-size: rem(30px);
+            font-family: 'Font Awesome 5 free';
+            font-weight: 900;
+            color: var(--clr-white);
+            transform: rotateY(180deg);
+            animation: arrow 1s ease-in 0s infinite alternate;
+        }
+    }
+
+    @include breakpoint(medium) {
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: rem(30px);
+        overflow: visible;
+    }
+    @include breakpoint(xlarge) {
+        justify-content: space-between;
+    }
+}
+
+@keyframes arrow {
+    from {
+        left: 90%;
+    }
+    to {
+        left: 70%;
+    }
+}
+
+.l-pack__wrapper-cards .c-card-pack {
+    flex-shrink: 0;
+}

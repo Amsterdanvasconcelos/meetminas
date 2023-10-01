@@ -9,9 +9,7 @@ body {
     background-color: var(--clr-background);
 
     @media (prefers-color-scheme: dark) {
-        body {
-            background-color: rgb(17, 17, 17);
-        }
+        background-color: rgb(17, 17, 17);
     }
 }
 
