@@ -1,0 +1,61 @@
+@use '../util/' as *;
+
+.l-gallery {
+    margin: 0 auto;
+    background-color: var(--clr-background);
+    max-width: var(--width-full);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.l-gallery__item {
+    position: relative;
+    min-width: rem(170px);
+    cursor: pointer;
+    overflow: hidden;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        background-color: var(--clr-black);
+        filter: opacity(0);
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        transition: var(--transition);
+    }
+    &:hover {   
+        &::before {
+            filter: opacity(.7);
+        }
+        .l-gallery__thumb {
+            transform: scale(1.2);
+        }
+        .l-gallery__local {
+            filter: opacity(1);
+        }
+    } 
+
+    @include breakpoint(medium) {
+        flex: 0 0 50%;
+    }
+    @include breakpoint(large) {
+        flex: 0 0 25%;
+    }
+}
+
+.l-gallery__thumb {
+    transition: var(--transition);
+}
+
+.l-gallery__local {
+    position: absolute;
+    bottom: 9%;
+    left: 6%;
+    color: var(--clr-white);
+    font-size: rem(24px);
+    line-height: 1.2;
+    filter: opacity(0);
+    z-index: 2;
+    transition: var(--transition);
+}

@@ -12,6 +12,10 @@
     padding: rem(12px);
     height: 60px;
     width: 100%;
+    font-size: rem(16px);
+    @include breakpoint(large) {
+        font-size: rem(20px);
+    }
 }
 
 .c-form-newsletter__btn {
