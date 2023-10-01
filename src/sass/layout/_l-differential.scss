@@ -1,0 +1,22 @@
+@use '../util/' as *;
+
+.l-differential {
+    margin: 0 auto;
+    max-width: var(--width-full);
+    @include padding;
+}
+
+.l-differential__wrapper-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: rem(50px);
+
+    @include breakpoint(large) {
+        justify-content: space-between;
+    }
+}
+
+.l-differential__wrapper-cards .c-card-differential {
+    flex: 1 1 rem(300px);
+}

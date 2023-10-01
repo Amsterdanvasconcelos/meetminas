@@ -1,0 +1,36 @@
+@use '../util/' as *;
+
+.c-card-differential {
+    max-width: rem(400px);
+}
+
+.c-card-differential__title {
+    text-transform: uppercase;
+    font-size: rem(22px);
+    font-weight: 600;
+
+    @include breakpoint(large) {
+        font-size: rem(24px);
+    }
+    &::before {
+        padding: rem(8px);
+        margin-right: rem(10px);
+        background-color: var(--clr-black);
+        color: var(--clr-white);
+        font-family: 'Font Awesome 5 free';
+        font-weight: 900;
+    }
+    &--wallet::before {
+        content: '\f555';
+    }
+    &--map::before {
+        content: '\f5a0';
+    }
+    &--socks::before {
+        content: '\f696';
+    }
+}
+
+.c-card-differential__description {
+    font-weight: 400;
+}

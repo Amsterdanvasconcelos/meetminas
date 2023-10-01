@@ -10,7 +10,7 @@
     box-shadow: var(--dark-shadow);
     background-color: var(--clr-background);
     width: 100%;
-    max-width: var(--max-width-default);
+    max-width: var(--width-full);
     z-index: 10;
     
     @include padding;

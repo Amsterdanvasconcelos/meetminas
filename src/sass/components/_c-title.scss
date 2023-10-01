@@ -2,8 +2,10 @@
 
 .c-title {
     padding-bottom: rem(16px);
+    font-size: rem(30px);
     font-weight: 900;
     text-align: center;
+    line-height: 1.2;
     text-transform: uppercase;
     &--emphasis {
         color: var(--clr-medium-green);

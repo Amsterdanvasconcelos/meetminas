@@ -1,3 +1,5 @@
+@use '../util/' as *;
+
 img {
     display: block;
     max-width: 100%;
@@ -5,10 +7,19 @@ img {
 
 body {
     background-color: var(--clr-background);
+
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: rgb(17, 17, 17);
+        }
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: rgb(17, 17, 17);
+section:nth-child(even) {
+    background-color: var(--clr-light-green);
+
+    @include breakpoint(medium) {
+        padding-top: rem(56px) !important;
+        padding-bottom: rem(56px) !important;
     }
 }
