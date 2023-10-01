@@ -1,0 +1,39 @@
+@use '../util/' as *;
+
+.l-about {
+    background-color: var(--clr-background);
+    max-width: var(--max-width-default);
+    margin: 0 auto;
+    padding: rem(16px);
+
+    @include breakpoint(large) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.l-about .c-title {
+    grid-column: 1 / -1;
+}
+
+.l-about__wrapper-img {
+    grid-column: 1;
+}
+
+.l-about__img {
+    margin: 0 auto;
+}
+
+.l-about__text {
+    grid-column: 2;
+}
+
+.l-about__text-title {
+    padding-top: rem(16px);
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.l-about__text-paragraph {
+    padding-top: rem(16px);
+}

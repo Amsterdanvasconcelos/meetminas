@@ -1,0 +1,11 @@
+@use '../util/' as *;
+
+.c-title {
+    padding-bottom: rem(16px);
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    &--emphasis {
+        color: var(--clr-medium-green);
+    }
+}
