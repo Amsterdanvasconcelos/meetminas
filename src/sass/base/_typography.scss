@@ -4,7 +4,6 @@ body {
     color: var(--clr-text);
     font-family: var(--ff-primary);
     font-size: var(--font-size-default);
-    line-height: var(--line-height-default);
 }
 
 p,
@@ -16,20 +15,4 @@ h4 {
     hyphens: auto;
     margin-top: 0;
     overflow-wrap: break-word;
-}
-
-h1 {
-    font-size: var(--font-step-4);
-}
-
-h2 {
-    font-size: var(--font-step-3);
-}
-
-h3 {
-    font-size: var(--font-step-2);
-}
-
-h4 {
-    font-size: var(--font-step-1);
 }
