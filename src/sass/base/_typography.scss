@@ -4,6 +4,7 @@ body {
     color: var(--clr-text);
     font-family: var(--ff-primary);
     font-size: rem(16px);
+    line-height: 1.2;
     @include breakpoint(medium) {
         font-size: rem(18px);
     }

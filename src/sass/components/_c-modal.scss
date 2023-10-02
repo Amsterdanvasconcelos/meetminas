@@ -1,0 +1,110 @@
+@use '../util/' as *;
+
+.c-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: rem(16px);
+    background-color: rgba($color: #000000, $alpha: .6);
+    height: 100%;
+    width: 100%;
+    color: var(--clr-white);
+    z-index: 20;
+}
+
+.c-modal__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: rem(10px) rem(16px);
+    cursor: pointer;
+    font-size: rem(24px);
+}
+
+.c-modal__content {
+    background-color: red;
+    @include breakpoint(medium) {
+        max-width: 70%;
+    }
+    @include breakpoint(large) {
+        max-width: rem(700px);
+    }
+}
+
+.c-modal__slider {
+    position: relative;
+}
+
+.c-modal__img-number {
+    position: absolute;
+    background-color: var(--clr-black);
+    padding: rem(2px);
+    margin: rem(8px) 0 0 rem(8px);
+}
+
+.c-modal__buttons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c-modal__btn-prev,
+.c-modal__btn-next {
+    padding: rem(16px);
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--clr-white);
+    font-size: rem(24px);
+    transition: var(--transition);
+    &:hover {
+        color: var(--clr-medium-green);
+    }
+}
+
+.c-modal__img-description {
+    background-color: var(--clr-black);
+    text-align: center;
+}
+
+.c-modal__thumbs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.c-modal__content-img-thumb {
+    position: relative;
+    flex: 0 0 25%;
+    cursor: pointer;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--clr-black);
+        filter: opacity(.7);
+        transition: var(--transition);
+    }
+    &:hover {
+        &::before {
+            filter: opacity(0);
+        }
+    }
+    @include breakpoint(xmedium) {
+        flex: 1;
+    }
+}
+
+.c-modal__content-img-thumb--active.c-modal__content-img-thumb::before {
+    filter: opacity(0);
+}
