@@ -17,7 +17,7 @@ section:nth-child(even) {
     background-color: var(--clr-light-green);
 
     @include breakpoint(medium) {
-        padding-top: rem(56px) !important;
-        padding-bottom: rem(56px) !important;
+        padding-top: rem(56px);
+        padding-bottom: rem(56px);
     }
 }

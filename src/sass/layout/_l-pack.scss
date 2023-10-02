@@ -5,6 +5,9 @@
     margin: 0 auto;
     max-width: var(--width-full);
     @include padding;
+    @include breakpoint(large) {
+        padding-top: rem(110px) !important;
+    }
 }
 
 .l-pack__wrapper-cards {

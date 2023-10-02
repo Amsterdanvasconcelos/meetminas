@@ -1,0 +1,63 @@
+@use '../util/' as *;
+
+.l-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(16px);
+    padding: rem(50px) rem(16px);
+    background-color: var(--clr-dark-green);
+    color: var(--clr-white);
+}
+
+.l-footer .c-navbar {
+    height: auto;
+    display: flex;
+    max-width: 100%;
+}
+
+.l-footer .c-navbar__link {
+    padding: rem(5px);
+    color: var(--clr-white);
+    font-size: rem(13px);
+    &:hover {
+        background: none;
+        text-decoration: underline;
+        padding-left: rem(5px);
+        color: var(--clr-white);
+    }
+
+    @include breakpoint(medium) {
+        font-size: rem(16px);
+        padding: rem(16px);
+        &:hover {
+            padding-left: rem(16px);
+        }
+    }
+}
+
+.l-footer .c-nav-social__link {
+    &:hover {
+        color: var(--clr-white);
+    }
+}
+
+.l-footer__copyright {
+    font-weight: 900;
+
+    @include breakpoint(medium) {
+        font-weight: 600;
+    }
+}
+
+.br-content {
+    &::after {
+        content: "\a";
+        white-space: pre;
+    }
+    @include breakpoint(medium) {
+        &::after {
+            content: "";
+        }
+    }
+}

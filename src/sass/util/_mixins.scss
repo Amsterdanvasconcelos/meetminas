@@ -4,6 +4,7 @@
 @mixin padding{
     padding: rem(16px);
     @include breakpoint(large) {
-        padding: rem(16px) rem(60px);
+        padding-left: rem(60px);
+        padding-right: rem(60px);
     }
 }
