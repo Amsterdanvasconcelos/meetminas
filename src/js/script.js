@@ -3,7 +3,6 @@ const showDate = document.querySelector('[data-copyright="showDate"]')
 const data = new Date()
 const year = data.getFullYear()
 
-
 showDate.textContent = year + '.'
 
 //modal 
@@ -46,7 +45,7 @@ const _gallery = [
 const _elements = {
 	date: document.querySelector(".date"),
 
-	scrollLinks: document.querySelectorAll(".navbar-list__link, .footer-list__link"),
+	scrollLinks: document.querySelectorAll('[data-link="skroll"]'),
 	navbarList: document.querySelector(".navbar-list"),
 	toggle: document.querySelector(".navbar-header__toggle"),
 
@@ -66,7 +65,18 @@ const _elements = {
 let _sliderCounter = 0, _touchStart, _touchEnd;
 
 _elements.scrollLinks.forEach(link => {
+	link.addEventListener('click', event => {
+		const id = link.getAttribute('href')
+		const element = document.querySelector(id)
+		const position = element.offsetTop
+		
+		window.scrollTo({
+			top: position,
+			behavior: 'smooth'
+		})
 
+		event.preventDefault()
+	})
 });
 
 _elements.toggle.addEventListener("click", () => {
