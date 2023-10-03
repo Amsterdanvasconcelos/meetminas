@@ -12,7 +12,10 @@
 }
 
 .c-navbar--show-links {
-    height: 100%;
+    height: rem(240px);
+    @include breakpoint(large) {
+        height: auto;
+    }
 }
 
 .c-navbar__link {
