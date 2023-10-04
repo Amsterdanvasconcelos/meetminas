@@ -10,7 +10,7 @@ const _gallery = [
 	{
 		img: "assets/imgs/photo_2.png",
 		description: "Tiradentes"
-	},
+	}, 
 	{
 		img: "assets/imgs/photo_3.png",
 		description: "São Lourenço"
