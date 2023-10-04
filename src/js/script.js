@@ -1,68 +1,68 @@
-// date of the footer
-const showDate = document.querySelector('[data-copyright="showDate"]')
-const data = new Date()
-const year = data.getFullYear()
-
-showDate.textContent = year + '.'
-
-//modal 
-
 const _gallery = [
 	{
-		img: "assets/photo_0.png",
+		img: "assets/imgs/photo_0.png",
 		description: "Conceição do Mato Dentro"
 	},
 	{
-		img: "assets/photo_1.png",
+		img: "assets/imgs/photo_1.png",
 		description: "Diamantina"
 	},
 	{
-		img: "assets/photo_2.png",
+		img: "assets/imgs/photo_2.png",
 		description: "Tiradentes"
 	},
 	{
-		img: "assets/photo_3.png",
+		img: "assets/imgs/photo_3.png",
 		description: "São Lourenço"
 	},
 	{
-		img: "assets/photo_4.png",
+		img: "assets/imgs/photo_4.png",
 		description: "Serro"
 	},
 	{
-		img: "assets/photo_5.png",
+		img: "assets/imgs/photo_5.png",
 		description: "São Tomé das Letras"
 	},
 	{
-		img: "assets/photo_6.png",
+		img: "assets/imgs/photo_6.png",
 		description: "Ipoema"
 	},
 	{
-		img: "assets/photo_7.png",
+		img: "assets/imgs/photo_7.png",
 		description: "Ouro Preto"
 	}
 ]
 
 const _elements = {
-	date: document.querySelector(".date"),
+	showDate: document.querySelector('[data-copyright="showDate"]'),
 
 	scrollLinks: document.querySelectorAll('[data-link="skroll"]'),
 	navbar: document.querySelector('[data-menu="navbar"]'),
 	btnMenu: document.querySelector('[data-menu="btn-menu"]'),
 
-	galleryItems: document.querySelectorAll(".galeria-item"),
-	sliderThumbsImage: document.querySelectorAll(".slider-thumbs__img"),
-	closeModalBtn: document.querySelector(".modal__close"),
-	modal: document.querySelector(".modal"),
+	galleryItems: document.querySelectorAll('[data-modal="gallery-item"]'),
+	sliderThumbsImage: document.querySelectorAll('[data-modal="thumb-img"]'),
+	closeModalBtn: document.querySelector('[data-modal="close-btn"]'),
+	modal: document.querySelector('[data-modal="modal"]'),
 
-	slider: document.querySelector(".slider"),
-	sliderImage: document.querySelector(".slider-image__img"),
-	sliderImageNumber: document.querySelector(".slider-image__number"),
-	sliderImageDescription: document.querySelector(".slider-image-description"),
+	slider: document.querySelector('[data-modal="slider"]'),
+	sliderImage: document.querySelector('[data-modal="slider-img"]'),
+	sliderImageNumber: document.querySelector('[data-modal="img-number"]'),
+	sliderImageDescription: document.querySelector('[data-modal="description"]'),
 	sliderPrevButton: document.querySelector(".slider-buttons__btn-prev"),
 	sliderNextButton: document.querySelector(".slider-buttons__btn-next"),
 }
 
 let _sliderCounter = 0, _touchStart, _touchEnd;
+
+// date of the footer
+
+const data = new Date()
+const year = data.getFullYear()
+
+_elements.showDate.textContent = year + '.'
+
+// navegação
 
 _elements.scrollLinks.forEach(link => {
 	link.addEventListener('click', event => {
@@ -86,32 +86,53 @@ _elements.btnMenu.addEventListener("click", () => {
 	_elements.navbar.classList.toggle('c-navbar--show-links')
 });
 
-_elements.galleryItems.forEach(item => {
+//modal 
 
+_elements.galleryItems.forEach(item => {
+	item.addEventListener('click', event => {
+		const id = getImageId(event)
+		updateModal(id)
+		
+		_elements.modal.style.display = 'flex'
+	})
 });
 
 _elements.sliderThumbsImage.forEach(img => {
-
+	img.addEventListener('click', event => {
+		const id = getImageId(event)
+		updateModal(id)
+	})
 });
 
 _elements.closeModalBtn.addEventListener("click", () => {
-
+	_elements.modal.style.display = 'none'
 });
 
-_elements.sliderNextButton.addEventListener("click", () => nextImage());
+// _elements.sliderNextButton.addEventListener("click", () => nextImage());
 
-_elements.sliderPrevButton.addEventListener("click", () => prevImage());
+// _elements.sliderPrevButton.addEventListener("click", () => prevImage());
 
-const getImageId = (target) => {
+const getImageId = ({ target }) => {
+	const arrFromChildren = Array.from(target.parentNode.children);
+	const id = arrFromChildren.indexOf(target)
 
+	return id;
 }
 
 const updateModal = (imgId) => {
+	_elements.sliderImage.src = _gallery[imgId].img
+	_elements.sliderImageNumber.textContent = (imgId + 1) + ' / ' + _gallery.length
+	_elements.sliderImageDescription.textContent = _gallery[imgId].description
 
+	_elements.sliderThumbsImage.forEach(img => {
+		img.classList.remove('c-modal__content-img-thumb--active')
+	})
+
+	_elements.sliderThumbsImage[imgId].classList.add('c-modal__content-img-thumb--active')
 }
 
 const nextImage = () => {
-
+	updateModal(_sliderCounter)
 }
 
 const prevImage = () => {

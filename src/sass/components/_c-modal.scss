@@ -1,9 +1,13 @@
 @use '../util/' as *;
 
+.content-position-modal {
+    display: flex;
+    justify-content: center;
+}
+
 .c-modal {
     position: fixed;
     top: 0;
-    left: 0;
     display: none;
     justify-content: center;
     align-items: center;
@@ -11,6 +15,7 @@
     background-color: rgba($color: #000000, $alpha: .6);
     height: 100%;
     width: 100%;
+    max-width: var(--width-full);
     color: var(--clr-white);
     z-index: 20;
 }

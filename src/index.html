@@ -193,49 +193,51 @@
             <button class="c-form-newsletter__btn" type="submit">Enviar</button>
         </form>
     </section>
-
+ 
+    <!-- gallery -->
     <section class="l-gallery" id="gallery">
-        <article class="l-gallery__item">
+        <article class="l-gallery__item" data-modal="gallery-item">
 			<img src="assets/imgs/photo_0.png" alt="Imagem de Conceição do Mato Dentro" class="l-gallery__thumb">
 			<h4 class="l-gallery__local">Conceição do Mato Dentro</h4>
 		</article>
 		
-		<article class="l-gallery__item">
+		<article class="l-gallery__item" data-modal="gallery-item">
 			<img src="assets/imgs/photo_1.png" alt="Imagem de Diamantina" class="l-gallery__thumb">
 			<h4 class="l-gallery__local">Diamantina</h4>
 		</article>
 		
-		<article class="l-gallery__item">
+		<article class="l-gallery__item" data-modal="gallery-item">
 			<img src="assets/imgs/photo_2.png" alt="Imagem de Tiradentes" class="l-gallery__thumb">
 			<h4 class="l-gallery__local">Tiradentes</h4>
 		</article>
 		
-		<article class="l-gallery__item">
+		<article class="l-gallery__item" data-modal="gallery-item">
 			<img src="assets/imgs/photo_3.png" alt="Imagem de São Lourenço" class="l-gallery__thumb">
 			<h4 class="l-gallery__local">São Lourenço</h4>
 		</article>
 		
-		<article class="l-gallery__item">
+		<article class="l-gallery__item" data-modal="gallery-item">
 			<img src="assets/imgs/photo_4.png" alt="Imagem do Serro" class="l-gallery__thumb">
 			<h4 class="l-gallery__local">Serro</h4>
 		</article>
 		
-		<article class="l-gallery__item">
+		<article class="l-gallery__item" data-modal="gallery-item">
 			<img src="assets/imgs/photo_5.png" alt="Imagem de São Tomé das Letras" class="l-gallery__thumb">
 			<h4 class="l-gallery__local">São Tomé das Letras</h4>
 		</article>
 		
-		<article class="l-gallery__item">
+		<article class="l-gallery__item" data-modal="gallery-item">
 			<img src="assets/imgs/photo_6.png" alt="Imagem de Ipoema" class="l-gallery__thumb">
 			<h4 class="l-gallery__local">Ipoema</h4>
 		</article>
 		
-		<article class="l-gallery__item">
+		<article class="l-gallery__item" data-modal="gallery-item">
 			<img src="assets/imgs/photo_7.png" alt="Imagem de Ouro" class="l-gallery__thumb">
 			<h4 class="l-gallery__local">Ouro Preto</h4>
 		</article>
     </section>
 
+    <!-- footer -->
     <footer class="l-footer">
 
         <ul class="c-navbar">
@@ -264,45 +266,48 @@
 
     </footer>
 
-    <div class="c-modal">
-        <div class="c-modal__close"><i class="fas fa-times"></i></div>
-        <div class="c-modal__content">
-            <div class="c-modal__slider">
-                <div class="c-modal__content-img-slider">
-                    <div class="c-modal__img-number">1 / 6</div>
-                    <img src="assets/imgs/photo_0.png" alt="">
+    <!-- Modal -->
+    <div class="content-position-modal">
+        <div class="c-modal" data-modal="modal">
+            <div class="c-modal__close" data-modal="close-btn"><i class="fas fa-times"></i></div>
+            <div class="c-modal__content">
+                <div class="c-modal__slider" data-modal="slider">
+                    <div class="c-modal__content-img-slider">
+                        <div class="c-modal__img-number" data-modal="img-number">1 / 6</div>
+                        <img data-modal="slider-img" src="assets/imgs/photo_0.png" alt="">
+                    </div>
+                    <div class="c-modal__buttons">
+                        <button class="c-modal__btn-prev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="c-modal__btn-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
                 </div>
-                <div class="c-modal__buttons">
-                    <button class="c-modal__btn-prev"><i class="fas fa-chevron-left"></i></button>
-                    <button class="c-modal__btn-next"><i class="fas fa-chevron-right"></i></button>
+                <p class="c-modal__img-description" data-modal="description">Teste de Caption</p>
+                <div class="c-modal__thumbs">
+                    <div class="c-modal__content-img-thumb" data-modal="thumb-img">
+                            <img src="assets/imgs/photo_0.png" alt="Imagem de Conceição do Mato Dentro">
+                        </div>
+                        <div class="c-modal__content-img-thumb" data-modal="thumb-img">
+                            <img src="assets/imgs/photo_1.png" alt="Imagem de Diamantina">
+                        </div>
+                        <div class="c-modal__content-img-thumb" data-modal="thumb-img">
+                            <img src="assets/imgs/photo_2.png" alt="Imagem de Tiradentes">
+                        </div>
+                        <div class="c-modal__content-img-thumb" data-modal="thumb-img">
+                            <img src="assets/imgs/photo_3.png" alt="Imagem de São Lourenço">
+                        </div>
+                        <div class="c-modal__content-img-thumb" data-modal="thumb-img">
+                            <img src="assets/imgs/photo_4.png" alt="Imagem do Serro">
+                        </div>
+                        <div class="c-modal__content-img-thumb" data-modal="thumb-img">
+                            <img src="assets/imgs/photo_5.png" alt="Imagem de São Tomé das Letras">
+                        </div>
+                        <div class="c-modal__content-img-thumb" data-modal="thumb-img">
+                            <img src="assets/imgs/photo_6.png" alt="Imagem de Ipoema">
+                        </div>
+                        <div class="c-modal__content-img-thumb" data-modal="thumb-img">
+                            <img src="assets/imgs/photo_7.png" alt="Imagem de Ouro">
+                        </div>
                 </div>
-            </div>
-            <p class="c-modal__img-description">Teste de Caption</p>
-            <div class="c-modal__thumbs">
-                <div class="c-modal__content-img-thumb">
-					<img src="assets/imgs/photo_0.png" alt="Imagem de Conceição do Mato Dentro">
-				</div>
-				<div class="c-modal__content-img-thumb">
-					<img src="assets/imgs/photo_1.png" alt="Imagem de Diamantina">
-				</div>
-				<div class="c-modal__content-img-thumb">
-					<img src="assets/imgs/photo_2.png" alt="Imagem de Tiradentes">
-				</div>
-				<div class="c-modal__content-img-thumb">
-					<img src="assets/imgs/photo_3.png" alt="Imagem de São Lourenço">
-				</div>
-				<div class="c-modal__content-img-thumb">
-					<img src="assets/imgs/photo_4.png" alt="Imagem do Serro">
-				</div>
-				<div class="c-modal__content-img-thumb">
-					<img src="assets/imgs/photo_5.png" alt="Imagem de São Tomé das Letras">
-				</div>
-				<div class="c-modal__content-img-thumb">
-					<img src="assets/imgs/photo_6.png" alt="Imagem de Ipoema">
-				</div>
-				<div class="c-modal__content-img-thumb">
-					<img src="assets/imgs/photo_7.png" alt="Imagem de Ouro">
-				</div>
             </div>
         </div>
     </div>
