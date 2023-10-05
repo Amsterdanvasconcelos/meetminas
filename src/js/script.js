@@ -1,3 +1,23 @@
+const _elements = {
+	showDate: document.querySelector('[data-copyright="showDate"]'),
+
+	scrollLinks: document.querySelectorAll('[data-link="skroll"]'),
+	navbar: document.querySelector('[data-menu="navbar"]'),
+	btnMenu: document.querySelector('[data-menu="btn-menu"]'),
+
+	galleryItems: document.querySelectorAll('[data-modal="gallery-item"]'),
+	sliderThumbsImage: document.querySelectorAll('[data-modal="thumb-img"]'),
+	closeModalBtn: document.querySelector('[data-modal="close-btn"]'),
+	modal: document.querySelector('[data-modal="modal"]'),
+
+	slider: document.querySelector('[data-modal="slider"]'),
+	sliderImage: document.querySelector('[data-modal="slider-img"]'),
+	sliderImageNumber: document.querySelector('[data-modal="img-number"]'),
+	sliderImageDescription: document.querySelector('[data-modal="description"]'),
+	sliderPrevButton: document.querySelector('[data-modal="button-prev"]'),
+	sliderNextButton: document.querySelector('[data-modal="button-next"]'),
+}
+
 const _gallery = [
 	{
 		img: "assets/imgs/photo_0.png",
@@ -33,26 +53,6 @@ const _gallery = [
 	}
 ]
 
-const _elements = {
-	showDate: document.querySelector('[data-copyright="showDate"]'),
-
-	scrollLinks: document.querySelectorAll('[data-link="skroll"]'),
-	navbar: document.querySelector('[data-menu="navbar"]'),
-	btnMenu: document.querySelector('[data-menu="btn-menu"]'),
-
-	galleryItems: document.querySelectorAll('[data-modal="gallery-item"]'),
-	sliderThumbsImage: document.querySelectorAll('[data-modal="thumb-img"]'),
-	closeModalBtn: document.querySelector('[data-modal="close-btn"]'),
-	modal: document.querySelector('[data-modal="modal"]'),
-
-	slider: document.querySelector('[data-modal="slider"]'),
-	sliderImage: document.querySelector('[data-modal="slider-img"]'),
-	sliderImageNumber: document.querySelector('[data-modal="img-number"]'),
-	sliderImageDescription: document.querySelector('[data-modal="description"]'),
-	sliderPrevButton: document.querySelector(".slider-buttons__btn-prev"),
-	sliderNextButton: document.querySelector(".slider-buttons__btn-next"),
-}
-
 let _sliderCounter = 0, _touchStart, _touchEnd;
 
 // date of the footer
@@ -86,7 +86,11 @@ _elements.btnMenu.addEventListener("click", () => {
 	_elements.navbar.classList.toggle('c-navbar--show-links')
 });
 
-//modal 
+// modal 
+
+
+
+_elements.closeModalBtn.addEventListener("click", () => _elements.modal.style.display = 'none');
 
 _elements.galleryItems.forEach(item => {
 	item.addEventListener('click', event => {
@@ -95,26 +99,25 @@ _elements.galleryItems.forEach(item => {
 		
 		_elements.modal.style.display = 'flex'
 	})
-});
+})
 
 _elements.sliderThumbsImage.forEach(img => {
 	img.addEventListener('click', event => {
 		const id = getImageId(event)
 		updateModal(id)
 	})
-});
+})
 
-_elements.closeModalBtn.addEventListener("click", () => {
-	_elements.modal.style.display = 'none'
-});
+_elements.sliderPrevButton.addEventListener("click", () => prevImage())
 
-// _elements.sliderNextButton.addEventListener("click", () => nextImage());
+_elements.sliderNextButton.addEventListener("click", () => nextImage())
 
-// _elements.sliderPrevButton.addEventListener("click", () => prevImage());
 
 const getImageId = ({ target }) => {
 	const arrFromChildren = Array.from(target.parentNode.children);
 	const id = arrFromChildren.indexOf(target)
+
+	_sliderCounter = id
 
 	return id;
 }
@@ -131,12 +134,19 @@ const updateModal = (imgId) => {
 	_elements.sliderThumbsImage[imgId].classList.add('c-modal__content-img-thumb--active')
 }
 
-const nextImage = () => {
+const prevImage = () => {
+	if (--_sliderCounter < 0) {
+		_sliderCounter = _gallery.length - 1
+	}
 	updateModal(_sliderCounter)
 }
 
-const prevImage = () => {
+const nextImage = () => {
+	if (++_sliderCounter > _gallery.length - 1) {
+		_sliderCounter = 0
+	}
 
+	updateModal(_sliderCounter)
 }
 
 /**************************************************************************/
@@ -151,10 +161,10 @@ const prevImage = () => {
 /* https://inkasadev.alumy.com
 /**************************************************************************/
 
-_elements.slider.addEventListener("", e => {
+// _elements.slider.addEventListener("", e => {
 
-});
+// });
 
-_elements.slider.addEventListener("", e => {
+// _elements.slider.addEventListener("", e => {
 
-});
+// });
